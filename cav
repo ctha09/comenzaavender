@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comenzá a Vender | Expertos en Tiendas Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --bg-dark: #0a0e17;
+            --card-bg: #161e2d;
+            --text-light: #ffffff;
+            --text-gray: #a0aec0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: 0.4s ease;
+        }
+
+        .nav-left i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            filter: drop-shadow(0 0 8px var(--primary));
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Marca arriba a la derecha */
+        .brand-name {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0 15px;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-nav {
+            border: 1px solid var(--primary);
+            padding: 8px 20px;
+            border-radius: 6px;
+            background: rgba(0, 242, 254, 0.05);
+            color: var(--primary) !important;
+        }
+
+        .btn-nav:hover {
+            background: var(--primary);
+            color: #000 !important;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at 50% 50%, #1e3a8a33, #0a0e17);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-gray);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            color: #000;
+            padding: 18px 35px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s transform;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3);
+        }
+
+        /* --- SERVICIOS --- */
+        .services {
+            padding: 100px 8%;
+            background-color: #0d131f;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 50px 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: #1c2638;
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-gray);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 50px 8%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* --- ANIMACIONES --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* En una web real aquí iría un menú hamburguesa */
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-left">
+            <i class="fas fa-rocket"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li class="brand-name">Comenzá a Vender</li>
+            <li><a href="https://www.instagram.com/comenza_a_vender?igsh=MXhyM20wZzRzZHBzNw==" class="btn-nav" target="_blank">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="hero-content">
+            <h1 class="reveal">Tu negocio merece una <br><span>Tienda Profesional</span></h1>
+            <p class="reveal">Creamos sitios web optimizados para convertir visitantes en clientes. No pierdas más ventas por no estar en internet.</p>
+            <div class="cta-group reveal">
+                <a href="https://www.instagram.com/comenza_a_vender?igsh=MXhyM20wZzRzZHBzNw==" class="btn-primary" target="_blank">
+                    <i class="fab fa-instagram"></i> Consultar por Instagram
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="servicios" class="services">
+        <h2 class="section-title reveal">Nuestros Servicios</h2>
+        <div class="container">
+            <div class="card reveal">
+                <i class="fas fa-store"></i>
+                <h3>E-commerce</h3>
+                <p>Tiendas autogestionables configuradas para que vendas las 24 horas del día sin interrupciones.</p>
+            </div>
+            <div class="card reveal">
+                <i class="fas fa-code"></i>
+                <h3>Webs Corporativas</h3>
+                <p>Sitios institucionales con diseño de alta gama que transmiten confianza y profesionalismo.</p>
+            </div>
+            <div class="card reveal">
+                <i class="fas fa-rocket"></i>
+                <h3>Optimización</h3>
+                <p>Estructuras rápidas y livianas preparadas para escalar y aparecer en los primeros puestos.</p>
