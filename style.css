@@ -76,14 +76,40 @@ nav {
 }
 
 /* --- HERO SECTION --- */
+/* Actualizado con imagen de fondo decorativa */
 .hero {
+    position: relative; /* Necesario para el overlay */
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 100px 20px;
-    background: radial-gradient(circle at 50% 50%, #1e3a8a33, #0a0e17);
+    /* Imagen profesional de tecnología/laptop */
+    background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Capa decorativa para asegurar legibilidad del texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg, 
+        rgba(10, 14, 23, 0.95) 0%, 
+        rgba(10, 14, 23, 0.7) 100%
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Pone el texto sobre el overlay */
 }
 
 .hero h1 {
@@ -119,6 +145,11 @@ nav {
     transition: 0.3s transform;
 }
 
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3);
+}
+
 /* --- SERVICIOS --- */
 .services {
     padding: 80px 5%;
@@ -144,6 +175,11 @@ nav {
     text-align: center;
     border: 1px solid rgba(255,255,255,0.05);
     transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
 }
 
 .card i {
@@ -179,6 +215,6 @@ footer {
     .nav-links li:not(.brand-name):not(:last-child) { display: none; }
     .brand-name { font-size: 0.85rem; border: none; }
     .btn-nav { font-size: 0.75rem; padding: 5px 10px; }
-    .hero { padding-top: 120px; }
+    .hero { padding-top: 120px; background-attachment: scroll; }
     .btn-primary { width: 100%; justify-content: center; }
 }
