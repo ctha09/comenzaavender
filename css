@@ -1,0 +1,77 @@
+:root {
+    --primary: #00f2fe;
+    --secondary: #4facfe;
+    --bg-dark: #0a0e17;
+    --card-bg: #161e2d;
+    --text-light: #ffffff;
+    --text-gray: #a0aec0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- NAV --- */
+nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5%; position: fixed; width: 100%; z-index: 1000;
+    background: rgba(10, 14, 23, 0.8); backdrop-filter: blur(10px); transition: 0.4s;
+}
+.nav-links { list-style: none; display: flex; gap: 20px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text-gray); font-size: 0.85rem; }
+.brand-name { font-weight: 800; color: var(--primary); text-transform: uppercase; }
+.btn-nav { border: 1px solid var(--primary); padding: 6px 15px; border-radius: 6px; color: var(--primary) !important; text-decoration: none; font-size: 0.8rem; }
+
+/* --- HERO --- */
+.hero {
+    position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; background-position: center; background-attachment: fixed;
+}
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(10, 14, 23, 0.95) 0%, rgba(10, 14, 23, 0.7) 100%); z-index: 1; }
+.hero-content { position: relative; z-index: 2; padding: 20px; }
+.hero h1 { font-size: clamp(2.2rem, 8vw, 4rem); margin-bottom: 20px; color: white; line-height: 1.2; }
+.hero h1 span { background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.btn-primary-hero { background: linear-gradient(45deg, var(--secondary), var(--primary)); color: #000; padding: 16px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+
+/* --- SERVICIOS --- */
+.services { padding: 100px 5%; background-color: #0d131f; }
+.section-title { text-align: center; font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 60px; color: white; }
+.container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+.card { background: var(--card-bg); padding: 40px 25px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+.card:hover { transform: translateY(-10px); border-color: var(--primary); }
+.card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+
+/* --- PLANES --- */
+.plans { padding: 100px 5%; background-color: var(--bg-dark); }
+.plan-card { background: var(--card-bg); padding: 40px 30px; border-radius: 25px; text-align: center; border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; display: flex; flex-direction: column; }
+.plan-card.featured { border: 2px solid var(--primary); transform: scale(1.05); position: relative; box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1); }
+.badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #000; padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; }
+.price { color: var(--primary); font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 20px; }
+.plan-list { list-style: none; margin: 20px 0; text-align: left; flex-grow: 1; }
+.plan-list li { margin-bottom: 15px; color: var(--text-gray); display: flex; align-items: center; font-size: 0.95rem; }
+.plan-list i { color: var(--primary); margin-right: 12px; }
+
+/* BOTONES PLANES */
+.plan-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+.btn-primary, .btn-outline { padding: 14px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; text-align: center; font-size: 0.9rem; }
+.btn-primary { background: linear-gradient(45deg, var(--secondary), var(--primary)); color: #000; }
+.btn-outline { border: 1px solid var(--primary); color: var(--primary); }
+.btn-example { color: var(--text-gray); font-size: 0.85rem; text-decoration: underline; margin-bottom: 5px; cursor: pointer; display: block; }
+.btn-example:hover { color: white; }
+
+/* --- ANIMACIONES Y FOOTER --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+footer { padding: 60px 5%; text-align: center; color: var(--text-gray); border-top: 1px solid rgba(255,255,255,0.05); }
+
+@media (max-width: 600px) {
+    .nav-links li:not(.brand-name):not(:last-child) { display: none; }
+    .plan-card.featured { transform: scale(1); }
+}
