@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -19,143 +8,153 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="loading-active">
 
-    <nav id="navbar">
-        <div class="nav-left">
-            <i class="fas fa-rocket"></i>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li class="brand-name">Comenzá a Vender</li>
-            <li><a href="https://www.instagram.com/comenza_a_vender" class="btn-nav" target="_blank">Contacto</a></li>
-        </ul>
-    </nav>
-
-    <header id="inicio" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="reveal">Tu negocio merece una <br><span>Tienda Profesional</span></h1>
-            <p class="reveal">No pierdas más ventas por no tener presencia online. Creamos tu web lista para vender.</p>
-            <div class="cta-group reveal">
-                <a href="#planes" class="btn-primary">
-                    <i class="fas fa-rocket"></i> Ver Planes y Precios
-                </a>
+    <div id="preloader">
+        <div class="preloader-panel left-panel"></div>
+        <div class="preloader-panel right-panel"></div>
+        <div class="preloader-content">
+            <div class="gyroscope-container">
+                <div class="gyro-ring outer"></div>
+                <div class="gyro-ring inner"></div>
+                <div class="gyro-pulse"></div>
+            </div>
+            <div class="logo-loader">Comenzá a Vender</div>
+            <p class="loader-phrase">Hacé crecer tu tienda con nosotros</p>
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
             </div>
         </div>
-    </header>
+    </div>
 
-    <section id="servicios" class="services">
-        <h2 class="section-title reveal">Lo que ofrecemos</h2>
-        <div class="container">
-            <div class="card reveal">
-                <i class="fas fa-store"></i>
-                <h3>E-commerce</h3>
-                <p>Tiendas preparadas para recibir pagos y gestionar stock sin complicaciones.</p>
-                <span class="click-info">Click para ver planes</span>
+    <div id="main-content">
+        <nav id="navbar">
+            <div class="brand-name">Comenzá a Vender</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
             </div>
-            <div class="card reveal">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Diseño Mobile</h3>
-                <p>Tu sitio se verá perfecto en cualquier celular, igual que este ejemplo.</p>
-                <span class="click-info">Click para ver planes</span>
-            </div>
-            <div class="card reveal">
-                <i class="fas fa-bolt"></i>
-                <h3>Velocidad</h3>
-                <p>Webs ultra rápidas para que tus clientes no se vayan esperando a que cargue.</p>
-                <span class="click-info">Click para ver planes</span>
-            </div>
-        </div>
-    </section>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#planes">Planes</a></li>
+                <li><a href="https://www.instagram.com/comenza_a_vender" class="btn-nav" target="_blank">Contacto</a></li>
+            </ul>
+        </nav>
 
-    <section id="planes" class="pricing">
-        <h2 class="section-title reveal">Planes y Mensualidades</h2>
-        <div class="container">
-            
-            <div class="pricing-card reveal">
-                <h3>Plan Inicio</h3>
-                <div class="pricing-options">
-                    <div class="option monthly">
-                        <span class="label">Pago Mes a Mes</span>
-                        <div class="price-small">$15.000<span>/mes</span></div>
-                    </div>
-                    <div class="separator">ó ahorrá con el</div>
-                    <div class="option annual-offer">
-                        <span class="label">Plan Anual</span>
-                        <div class="price-big">$10.000<span>/mes</span></div>
-                        <div class="save-badge">Ahorrás $60.000 al año</div>
-                    </div>
+        <header id="inicio" class="hero">
+            <div class="hero-content">
+                <h1 class="reveal">Tu negocio merece una <br><span>Tienda Profesional</span></h1>
+                <p class="reveal">Creamos webs ultra rápidas diseñadas para convertir visitas en clientes constantes.</p>
+                <div class="cta-group reveal">
+                    <a href="#planes" class="btn-primary">
+                        <i class="fas fa-rocket"></i> Ver Planes y Precios
+                    </a>
                 </div>
-                <ul>
-                    <li><i class="fas fa-check"></i> Tu tienda web lista</li>
-                    <li><i class="fas fa-check"></i> Códigos estáticos</li>
-                    <li><i class="fas fa-check"></i> Mantenimiento</li>
-                    <li><i class="fas fa-check"></i> Soporte</li>
-                </ul>
-                <a href="#" class="btn-plan">Elegir Plan Inicio</a>
             </div>
+        </header>
 
-            <div class="pricing-card featured reveal">
-                <div class="badge">Más Elegido</div>
-                <h3>Plan Pro</h3>
-                <div class="pricing-options">
-                    <div class="option monthly" style="background: rgba(255,255,255,0.03);">
-                        <span class="label">Pago Mes a Mes</span>
-                        <div class="price-small">$40.000<span>/mes</span></div>
-                    </div>
-                    <div class="separator">ó ahorrá con el</div>
-                    <div class="option annual-offer">
-                        <span class="label">Plan Anual</span>
-                        <div class="price-big">$30.000<span>/mes</span></div>
-                        <div class="save-badge">Ahorrás $120.000 al año</div>
-                    </div>
+        <section id="servicios" class="services">
+            <h2 class="section-title reveal">Lo que ofrecemos</h2>
+            <div class="container grid-3">
+                <div class="service-card reveal">
+                    <i class="fas fa-store"></i>
+                    <h3>E-commerce</h3>
+                    <p>Sistemas robustos de gestión y pagos online para tu negocio.</p>
                 </div>
-                <ul>
-                    <li><i class="fas fa-check"></i> Todo lo del plan inicio</li>
-                    <li><i class="fas fa-check"></i> Actualizaciones de stock</li>
-                    <li><i class="fas fa-check"></i> Cuenta de Instagram</li>
-                    <li><i class="fas fa-check"></i> 500 seguidores para empezar</li>
-                </ul>
-                <a href="#" class="btn-plan" style="background: var(--primary); color: #000;">Elegir Plan Pro</a>
-            </div>
-
-            <div class="pricing-card reveal">
-                <h3>Plan Full</h3>
-                <div class="pricing-options">
-                    <div class="option monthly">
-                        <span class="label">Pago Mes a Mes</span>
-                        <div class="price-small">$60.000<span>/mes</span></div>
-                    </div>
-                    <div class="separator">ó ahorrá con el</div>
-                    <div class="option annual-offer">
-                        <span class="label">Plan Anual</span>
-                        <div class="price-big">$50.000<span>/mes</span></div>
-                        <div class="save-badge">Ahorrás $120.000 al año</div>
-                    </div>
+                <div class="service-card reveal">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Diseño Mobile</h3>
+                    <p>Optimización total para que tu tienda vuele en celulares.</p>
                 </div>
-                <ul>
-                    <li><i class="fas fa-check"></i> Todo lo del plan pro</li>
-                    <li><i class="fas fa-check"></i> Cuenta de Instagram</li>
-                    <li><i class="fas fa-check"></i> Meta Verified</li>
-                    <li><i class="fas fa-check"></i> 1000 seguidores</li>
-                </ul>
-                <a href="#" class="btn-plan">Elegir Plan Full</a>
+                <div class="service-card reveal">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Velocidad</h3>
+                    <p>Carga instantánea utilizando tecnologías de código estático.</p>
+                </div>
             </div>
+        </section>
 
-        </div>
-    </section>
+        <section id="planes" class="pricing">
+            <h2 class="section-title reveal">Elegí tu Plan</h2>
+            <div class="container grid-3">
+                
+                <div class="pricing-card reveal">
+                    <h3>Plan Inicio</h3>
+                    <div class="pricing-options">
+                        <div class="option monthly">
+                            <span class="label">Pago Mes a Mes</span>
+                            <div class="price-small">$15.000<span>/mes</span></div>
+                        </div>
+                        <div class="separator">ó ahorrá con el</div>
+                        <div class="option annual-offer">
+                            <span class="label">Plan Anual</span>
+                            <div class="price-big">$10.000<span>/mes</span></div>
+                            <div class="save-badge">Ahorrás $60.000 al año</div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Tu tienda web lista</li>
+                        <li><i class="fas fa-check"></i> Códigos estáticos (Ultra rápida)</li>
+                        <li><i class="fas fa-check"></i> Soporte técnico especializado</li>
+                        <li><i class="fas fa-check"></i> Diseño optimizado para promocion</li>
+                    </ul>
+                    <a href="https://www.instagram.com/comenza_a_vender" target="_blank" class="btn-plan">Comenzar ahora</a>
+                </div>
 
-    <footer>
-        <p>&copy; 2026 Comenzá a Vender. <br> Diseñado para crecer.</p>
-    </footer>
+                <div class="pricing-card featured reveal">
+                    <div class="badge">Más Elegido</div>
+                    <h3>Plan Pro</h3>
+                    <div class="pricing-options">
+                        <div class="option monthly">
+                            <span class="label">Pago Mes a Mes</span>
+                            <div class="price-small">$40.000<span>/mes</span></div>
+                        </div>
+                        <div class="separator">ó ahorrá con el</div>
+                        <div class="option annual-offer">
+                            <span class="label">Plan Anual</span>
+                            <div class="price-big">$30.000<span>/mes</span></div>
+                            <div class="save-badge">Ahorrás $120.000 al año</div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Todo lo del plan Inicio</li>
+                        <li><i class="fas fa-check"></i> Actualizaciones de stock mensuales</li>
+                        <li><i class="fas fa-check"></i> 500 seguidores iniciales (Promo)</li>
+                        <li><i class="fas fa-check"></i> Panel de gestión simplificado</li>
+                    </ul>
+                    <a href="https://www.instagram.com/comenza_a_vender" target="_blank" class="btn-plan pro-btn">Elegir Pro</a>
+                </div>
+
+                <div class="pricing-card reveal">
+                    <h3>Plan Full</h3>
+                    <div class="pricing-options">
+                        <div class="option monthly">
+                            <span class="label">Pago Mes a Mes</span>
+                            <div class="price-small">$60.000<span>/mes</span></div>
+                        </div>
+                        <div class="separator">ó ahorrá con el</div>
+                        <div class="option annual-offer">
+                            <span class="label">Plan Anual</span>
+                            <div class="price-big">$50.000<span>/mes</span></div>
+                            <div class="save-badge">Ahorrás $120.000 al año</div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Todo lo del plan Pro</li>
+                        <li><i class="fas fa-check"></i> Gestión de Meta Verified</li>
+                        <li><i class="fas fa-check"></i> 1000 seguidores (Promo Lanzamiento)</li>
+                        <li><i class="fas fa-check"></i> Mantenimiento prioritario 24/7</li>
+                    </ul>
+                    <a href="https://www.instagram.com/comenza_a_vender" target="_blank" class="btn-plan">Elegir Full</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Comenzá a Vender. <br> Alta tecnología en ventas digitales.</p>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
-</html>
-    <script  src="./script.js"></script>
-
-  </body>
-  
 </html>
