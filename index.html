@@ -1,95 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinanceFlow Elite | Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>C.A.V | Web Engineering</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1 class="logo">💎 FinanceFlow Elite</h1>
-        <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">🌙 MODO OSCURO</button>
-    </header>
-
-    <div class="kpi-row">
-        <div class="kpi-card">
-            <span class="kpi-label">BALANCE GLOBAL</span>
-            <div class="kpi-value" id="kpi-balance">$0</div>
-        </div>
-        <div class="kpi-card">
-            <span class="kpi-label">TOTAL INGRESOS</span>
-            <div class="kpi-value income-text" id="kpi-in">$0</div>
-        </div>
-        <div class="kpi-card">
-            <span class="kpi-label">TOTAL GASTOS</span>
-            <div class="kpi-value expense-text" id="kpi-out">$0</div>
+    <div id="loading-screen" class="screen-overlay active">
+        <div class="grid-layer"></div>
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="t-title">system_boot.sh</span>
+            </div>
+            <div class="terminal-body">
+                <h1 class="loader-title">Comenzá a vender</h1>
+                <p class="loader-subtitle">// impulsamos tu presencia digital</p>
+                <div class="loader-bar-container"><div class="loader-bar"></div></div>
+                <p class="code-text" id="loading-logs">Booting system...</p>
+            </div>
         </div>
     </div>
 
-    <div class="db-grid">
-        <aside class="glass-panel">
-            <h3>Registro</h3>
-            <div class="form-group">
-                <label>Descripción</label>
-                <input type="text" id="desc" placeholder="Ej: Supermercado">
+    <div id="home-screen" class="screen-overlay">
+        <div class="grid-layer"></div>
+        <div class="content-box">
+            <div class="top-tag">&lt;DESIGN_&_DEVELOPMENT /&gt;</div>
+            <h1 class="hero-title">Bienvenido</h1>
+            <p class="hero-subtitle">¿Qué te podemos ofrecer?</p>
+            <div class="nav-buttons">
+                <button class="btn-opt" onclick="navigateTo('prices-screen')">[ VER PRECIOS ]</button>
+                <button class="btn-opt" onclick="navigateTo('gallery-screen')">[ VER EJEMPLOS ]</button>
             </div>
-            <div class="form-group">
-                <label>Monto</label>
-                <input type="number" id="amt" placeholder="0.00">
-            </div>
-            <div class="form-group">
-                <label>Categoría</label>
-                <select id="cat">
-                    <option value="Ingreso">📈 Ingreso</option>
-                    <option value="Comida">🍕 Comida</option>
-                    <option value="Ocio">🎬 Ocio</option>
-                    <option value="Salud">💊 Salud</option>
-                    <option value="Transporte">🚗 Transporte</option>
-                </select>
-            </div>
-            <button class="btn-add" onclick="add()">Registrar Operación</button>
-            <button class="btn-clear" onclick="clearAll()">BORRAR HISTORIAL</button>
-        </aside>
-
-        <div class="charts-col">
-            <div class="chart-container">
-                <h4 class="chart-title">TENDENCIA FINANCIERA</h4>
-                <canvas id="lineChart"></canvas>
-            </div>
-            <div class="chart-container">
-                <h4 class="chart-title">DISTRIBUCIÓN DE GASTOS</h4>
-                <canvas id="pieChart"></canvas>
-            </div>
-        </div>
-
-        <div class="glass-panel history-panel">
-            <h3>Historial</h3>
-            <div id="list"></div>
         </div>
     </div>
-</div>
 
-<script src="script.js"></script>
+    <div id="prices-screen" class="screen-overlay">
+        <div class="grid-layer"></div>
+        <div class="content-box">
+            <h2 class="title-sec">Estructura de Inversión</h2>
+            <div class="price-cards">
+                <div class="p-card">
+                    <div class="card-status">RUNNING</div>
+                    <span>COSTO DE LA WEB</span>
+                    <h3>$60.000</h3>
+                </div>
+                <div class="p-card featured-border">
+                    <div class="card-status">ACTIVE</div>
+                    <span>MANTENIMIENTO MENSUAL</span>
+                    <h3>$20.000</h3>
+                </div>
+            </div>
+            <div class="price-actions">
+                <a href="https://www.instagram.com/comenza_a_vender?igsh=MXhyM20wZzRzZHBzNw==" target="_blank" class="btn-cta-ig">CONTRATAR SERVICIO</a>
+                <button class="btn-back" onclick="navigateTo('home-screen')">// RETURN_TO_ROOT</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery-screen" class="gallery-layout screen-overlay">
+        <div class="grid-layer"></div>
+        <header class="gallery-header">
+            <button class="btn-back-home" onclick="navigateTo('home-screen')">[ VOLVER ]</button>
+            <div class="status-indicator"><span class="pulse"></span> ONLINE</div>
+        </header>
+
+        <div class="gallery-content">
+            <div class="gallery-intro">
+                <h2 class="gallery-main-title">Webs de ejemplo</h2>
+                <p class="gallery-cta">Si querés un diseño personalizado escribinos</p>
+                <a href="https://www.instagram.com/comenza_a_vender?igsh=MXhyM20wZzRzZHBzNw==" target="_blank" class="instagram-link">@comenza_a_vender</a>
+            </div>
+
+            <main class="gallery-grid">
+                <div class="card" onclick="openExternal('https://ctha09.github.io/finazasr/')">
+                    <div class="card-scan"></div>
+                    <div class="card-meta">ID: 001 // FINANCE</div>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800">
+                    <div class="info"><h3>FinanceFlow</h3><p>DATABASE_ARCHITECTURE</p></div>
+                </div>
+                <div class="card" onclick="openExternal('https://ctha09.github.io/techglobal/')">
+                    <div class="card-scan"></div>
+                    <div class="card-meta">ID: 002 // TECH</div>
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800">
+                    <div class="info"><h3>Tech Global</h3><p>E_COMMERCE_SYSTEM</p></div>
+                </div>
+                <div class="card" onclick="openExternal('https://ctha09.github.io/ropaurbana/')">
+                    <div class="card-scan"></div>
+                    <div class="card-meta">ID: 003 // FASHION</div>
+                    <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=800">
+                    <div class="info"><h3>Urban Stock</h3><p>UI_UX_INTERFACES</p></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="external-frame-container">
+        <button class="btn-floating-back" onclick="closeExternal()">[ ← VOLVER ]</button>
+        <iframe id="external-iframe" src="" frameborder="0"></iframe>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-</html>
-    <script  src="./script.js"></script>
-
-  </body>
-  
 </html>
